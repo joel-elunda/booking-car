@@ -35,9 +35,11 @@ public class DBQueries {
      */
     public static boolean insert(Object object) {
 
+        String query = "";
+
         if(object instanceof Client) {
             Client client = (Client) object;
-            String query = "INSERT INTO client (id, name, email) VALUES (" +
+            query = "INSERT INTO client (id, name, email) VALUES (" +
                     client.getID() + ",'" +
                     client.getName() + "','" +
                     client.getEmail() +"');";
@@ -47,7 +49,7 @@ public class DBQueries {
         if(object instanceof Car) {
 
             Car car = (Car) object;
-            String query = "INSERT INTO client (id,type, marque, matricule, couleur, id_user) VALUES (" +
+            query = "INSERT INTO client (id,type, marque, matricule, couleur, id_user) VALUES (" +
                     car.getID() + ",'" +
                     car.getType() + "','" +
                     car.getMarque() + "','" +
@@ -56,14 +58,14 @@ public class DBQueries {
                     car.getClient().getID() +"');";
         }
 
-        if(object instanceof Car) {
+        if(object instanceof Booking) {
 
-           Booking booking = (Booking) object;
-            String query = "INSERT INTO booking (id, id_client, id_car, date) VALUES (" +
-                    booking.getId() + ",'" +
-                    booking.getClient() + "','" +
-                    booking.getCar() + "','" +
-                    booking.getDate() + "','" ;
+            Booking booking = (Booking) object;
+            query = "INSERT INTO booking (id, id_client, id_car, date) VALUES (" +
+                    booking.getId() + "," +
+                    booking.getClient().getID() + "," +
+                    booking.getCar().getID() + ",'" +
+                    booking.getDate().toString() + "');" ;
         }
 
 

@@ -37,12 +37,24 @@ class Main {
         // Le client 1, reserve la voiture a 0
         Booking booking = new Booking(1, date, clients.get(1), cars.get(0));
 
-        // Enregistrement dans la base de donnees
+        /**
+         * Enregistrement dans la base de donnees
+         * d'une reservation
+         *
+         * System.out.println(DBQueries.insert(booking));
+         */
 
+        /**
+         * Enregistrement dans le fichier .txt
+         * de la reservation
+         *
+         * System.out.println(FileIO.create(booking.getPath(), booking.toString()));
+         */
 
-        // Fichier .txt
-        // Creation et enregistrement
-        System.out.println(FileIO.create(booking.getPath(), booking.toString()));
+        /**
+         * package objects : Ou se trouve tous les objets
+         * package FileIO : La manipulation des fichiers .txt
+         */
 
 
     }

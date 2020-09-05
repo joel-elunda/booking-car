@@ -1,0 +1,1 @@
+Booking{id=1, date=Sat Sep 05 16:43:25 CEST 2020, client=Client{ID=2, name='Jane Doe', email='janedoe@gmail.com'}, car=Car{ID=0, type='null', marque='null', matricule='null', couleur=null}}
